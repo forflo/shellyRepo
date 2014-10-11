@@ -34,6 +34,7 @@ shellyRepo_dlRepos(){
 		git clone ${i} 2> /dev/null || { 
 			clog 1 "[shellyRepo_dlRepos()]" Error while cloning repo $i!
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
+			return 1
 		}
 	done
 	
@@ -44,6 +45,7 @@ shellyRepo_dlRepos(){
 		hg clone ${i} 2> /dev/null || { 
 			clog 1 "[shellyRepo_dlRepos()]" Error while cloning repo $i!
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
+			return 1
 		}
 	done
 	
@@ -54,6 +56,7 @@ shellyRepo_dlRepos(){
 		svn checkout ${i} || { 
 			clog 1 "[shellyRepo_dlRepos()]" Error while checkout of $i!
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
+			return 1
 		}
 	done
 
@@ -62,13 +65,13 @@ shellyRepo_dlRepos(){
 }
 
 init(){
-	shellyRepo_init || {
-		clog 1 "[init()]" Could not init shellyRepo!
+	shellyRepo_dlRepos || {
+		clog 1 "[init()]" Could not download Repos!
 		exit 1
 	}
 
-	shellyRepo_dlRepos || {
-		clog 1 "[init()]" Could not download Repos!
+	shellyRepo_init || {
+		clog 1 "[init()]" Could not init shellyRepo!
 		exit 1
 	}
 

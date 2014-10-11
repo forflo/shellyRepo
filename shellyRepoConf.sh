@@ -1,12 +1,11 @@
+##
 # The full repolist used by
-# install_repos.sh
+# init.sh
 ##
 
 GIT_REPOLIST=(
 	"git@github.com:forflo/Maction.git"
-	"git@github.com:forflo/DNSSpackpack"
 	"git@github.com:forflo/admintools"
-	"git@github.com:forflo/shelly"
 	"git@github.com:forflo/wetL"
 	"git@github.com:forflo/libkact"
 	"git@github.com:forflo/dystruct"
@@ -24,8 +23,6 @@ GIT_REPOLIST=(
 
 MERCURIAL_REPOLIST=(
 	"ssh://hg@bitbucket.org/tartaros/fapr0"
-	"ssh://hg@bitbucket.org/forflo/fhbachelor"
-	"ssh://hg@bitbucket.org/forflo/fhmaster"	
 	"ssh://hg@bitbucket.org/tartaros/tartaros-misc"
 )
 
