@@ -8,6 +8,7 @@ SHELLY_pathFile=".paths.conf"
 SHELLY_gitList=(
 	"git@github.com:forflo/Maction.git"
 	"git@github.com:forflo/admintools"
+	"git@github.com:forflo/dmux.git"
 	"git@github.com:forflo/wetL"
 	"git@github.com:forflo/libkact"
 	"git@github.com:forflo/dystruct"
