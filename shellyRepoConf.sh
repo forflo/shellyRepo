@@ -1,9 +1,11 @@
-##
+#
 # The full repolist used by
 # init.sh
 ##
 
-GIT_REPOLIST=(
+SHELLY_pathFile=".paths.conf"
+
+SHELLY_gitList=(
 	"git@github.com:forflo/Maction.git"
 	"git@github.com:forflo/admintools"
 	"git@github.com:forflo/wetL"
@@ -21,11 +23,12 @@ GIT_REPOLIST=(
 	"ssh://florian@klingon.inf.fh-rosenheim.de/srv/git/work"
 )
 
-MERCURIAL_REPOLIST=(
+SHELLY_hgList=(
 	"ssh://hg@bitbucket.org/tartaros/fapr0"
 	"ssh://hg@bitbucket.org/tartaros/tartaros-misc"
 )
 
-SVN_REPOLIST=(
+SHELLY_svnList=(
 
 )
+
