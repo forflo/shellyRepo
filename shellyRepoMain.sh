@@ -27,20 +27,17 @@ declare -A SHELLYR_svnList
 # a simplyfied version.
 ##
 shellyRepo_init(){
-	local conf="shellyRepoConf.sh"
-	local actions="shellyRepoActions.sh"
+	local files=(shellyRepoConf.sh shellyRepoActions.sh)
 
-	. ${conf} || {
-		clog 1 "[shellyRepo_init()]" Sourcing of $conf failed
-		return 1
-	}
-
-	. ${actions} || {
-		clog 1 "[shellyRepo_init()]" Sourcing of $actions failed
-	}
+	for i in ${files[*]}; do
+		. ${i} || {
+			clog 1 "[shellyRepo_init()]" Sourcing of ${i} failed
+			return 1
+		}
+	done
 
 	type clog > /dev/null || {
-		clog 1 "[shellyRepo_init()]" Could not find logging function
+		clog 1 "[shellyRepo_init()]" Could not find logging function. Will define one!
 		function clog(){
 			shift
 			echo "$@"
