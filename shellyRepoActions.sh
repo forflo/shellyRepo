@@ -73,7 +73,7 @@ shellyRepo_pathAddition(){
 shellyRepo_action(){
 	for i in ${SHELLY_gitList[*]}; do
 		clog 2 "[shellyRepo_action()]" Execute hook "for repo $i"
-		${SHELLY_ACTIONMAP[$i]} || {
+		${SHELLYR_ACTIONMAP[$i]} || {
 			clog 1 "[shellyRepo_action()]" Could not execute function "for repo $i"
 			return 1
 		}
