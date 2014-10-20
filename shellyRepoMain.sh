@@ -10,8 +10,13 @@
 # by setup.sh inside of shellyMeta.
 ##
 
-# Workaround for bug
-declare -A SHELLYR_ACTIONMAP
+##
+# Workaround for bug which is fixed in 4.3
+# see. http://lists.gnu.org/archive/html/bug-bash/2014-10/msg00192.html
+##
+declare -A SHELLYR_hgList
+declare -A SHELLYR_gitList
+declare -A SHELLYR_svnList
 
 ##
 # Sources config and
@@ -54,7 +59,9 @@ shellyRepo_dlRepos(){
 
 	clog 2 "[shellyRepo_dlRepos()]" Downloading git repos.
 	cd ~/repos/git
-	for i in ${SHELLYR_gitList[*]}; do
+	
+	## ${!<name>[@]} is just the crude way of saying "give me all keys"
+	for i in ${!SHELLYR_gitList[@]}; do
 		clog 2 "[shellyRepo_dlRepos()]" Cloging repo $i.
 		git clone ${i} 2> /dev/null || { 
 			clog 1 "[shellyRepo_dlRepos()]" "Error while cloning repo $i!"
@@ -64,7 +71,7 @@ shellyRepo_dlRepos(){
 	
 	clog 2 "[shellyRepo_dlRepos()]" Downloading hg repos.
 	cd ~/repos/mercurial
-	for i in ${SHELLYR_hgList[*]}; do
+	for i in ${!SHELLYR_hgList[@]}; do
 		clog 2 "[shellyRepo_dlRepos()]" Cloning repo $i.
 		hg clone ${i} 2> /dev/null || { 
 			clog 1 "[shellyRepo_dlRepos()]" "Error while cloning repo $i!"
@@ -74,7 +81,7 @@ shellyRepo_dlRepos(){
 	
 	clog 2 "[shellyRepo_dlRepos()]" Downloading srv repos.
 	cd ~/repos/svn
-	for i in ${SHELLYR_svnList[*]}; do
+	for i in ${!SHELLYR_svnList[@]}; do
 		clog 2 "[shellyRepo_dlRepos()]" Checkout of repo $i.
 		svn checkout ${i} || { 
 			clog 1 "[shellyRepo_dlRepos()]" "Error while checkout of $i!"
@@ -92,10 +99,10 @@ shellyRepoMain(){
 		exit 1
 	}
 
-#	shellyRepo_dlRepos || {
-#		clog 1 "[init()]" Could not download Repos!
-#		exit 1
-#	}
+	shellyRepo_dlRepos || {
+		clog 1 "[init()]" Could not download Repos!
+		exit 1
+	}
 
 	shellyRepo_action || {
 		clog 1 "[init()]" Could not download Repos!
