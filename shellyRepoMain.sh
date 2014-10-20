@@ -60,7 +60,7 @@ shellyRepo_dlRepos(){
 	## ${!<name>[@]} is just the crude way of saying "give me all keys"
 	for i in ${!SHELLYR_gitList[@]}; do
 		clog 2 "[shellyRepo_dlRepos()]" Cloning repo $i.
-		git clone ${i} 2> /dev/null || { 
+		git clone ${i} || { 
 			clog 1 "[shellyRepo_dlRepos()]" "Error while cloning repo $i!"
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
 		}
@@ -70,7 +70,7 @@ shellyRepo_dlRepos(){
 	cd ~/repos/mercurial
 	for i in ${!SHELLYR_hgList[@]}; do
 		clog 2 "[shellyRepo_dlRepos()]" Cloning repo $i.
-		hg clone ${i} 2> /dev/null || { 
+		hg clone ${i} || { 
 			clog 1 "[shellyRepo_dlRepos()]" "Error while cloning repo $i!"
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
 		}
