@@ -3,17 +3,16 @@
 # init.sh
 ##
 
+
 SHELLYR_pathFile=".paths.conf"
 
-SHELLYR_hgList=(
-	["ssh://hg@bitbucket.org/tartaros/fapr0"]="shelly_fapr0"
-	["ssh://hg@bitbucket.org/tartaros/tartaros-misc"]="shelly_tarmisc"
-)
-
-SHELLYR_svnList=(
-
-)
-
+##
+# In the following associative arrays you can map
+# a repository and an action.
+# Any action must be a function defined in shellyRepoActions
+# and any repository, which serves as key, should be an upstream
+# URI.
+##
 SHELLYR_gitList=(
 	["git@github.com:forflo/Maction.git"]="shelly_maction"
 	["git@github.com:forflo/admintools"]="shelly_admintools"
@@ -29,4 +28,13 @@ SHELLYR_gitList=(
 	["git@github.com:forflo/millionaer_server.git"]="shelly_millionaer"
 	["git@github.com:forflo/erzeuger_verbraucher.git"]="shelly_erzeuger"
 	["ssh://florian@klingon.inf.fh-rosenheim.de/srv/git/work"]="shelly_work"
+)
+
+SHELLYR_hgList=(
+	["ssh://hg@bitbucket.org/tartaros/fapr0"]="shelly_fapr0"
+	["ssh://hg@bitbucket.org/tartaros/tartaros-misc"]="shelly_tarmisc"
+)
+
+SHELLYR_svnList=(
+
 )
