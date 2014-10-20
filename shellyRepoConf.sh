@@ -3,9 +3,9 @@
 # init.sh
 ##
 
-SHELLY_pathFile=".paths.conf"
+SHELLYR_pathFile=".paths.conf"
 
-SHELLY_gitList=(
+SHELLYR_gitList=(
 	"git@github.com:forflo/Maction.git"
 	"git@github.com:forflo/admintools"
 	"git@github.com:forflo/dmux.git"
@@ -24,12 +24,12 @@ SHELLY_gitList=(
 	"ssh://florian@klingon.inf.fh-rosenheim.de/srv/git/work"
 )
 
-SHELLY_hgList=(
+SHELLYR_hgList=(
 	"ssh://hg@bitbucket.org/tartaros/fapr0"
 	"ssh://hg@bitbucket.org/tartaros/tartaros-misc"
 )
 
-SHELLY_svnList=(
+SHELLYR_svnList=(
 
 )
 
