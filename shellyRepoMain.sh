@@ -57,10 +57,9 @@ shellyRepo_dlRepos(){
 
 	clog 2 "[shellyRepo_dlRepos()]" Downloading git repos.
 	cd ~/repos/git
-	
 	## ${!<name>[@]} is just the crude way of saying "give me all keys"
 	for i in ${!SHELLYR_gitList[@]}; do
-		clog 2 "[shellyRepo_dlRepos()]" Cloging repo $i.
+		clog 2 "[shellyRepo_dlRepos()]" Cloning repo $i.
 		git clone ${i} 2> /dev/null || { 
 			clog 1 "[shellyRepo_dlRepos()]" "Error while cloning repo $i!"
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
@@ -94,16 +93,17 @@ shellyRepo_dlRepos(){
 shellyRepoMain(){
 	shellyRepo_init || {
 		clog 1 "[init()]" Could not init shellyRepo!
-		exit 1
+		return 1
 	}
 
 	shellyRepo_dlRepos || {
 		clog 1 "[init()]" Could not download Repos!
-		exit 1
+		return 1
 	}
 
 	shellyRepo_action || {
 		clog 1 "[init()]" Could not download Repos!
+		return 1
 	}
 
 	return 0
