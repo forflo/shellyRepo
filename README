@@ -1,19 +1,22 @@
-= init.sh = 
+init.sh
+=======
 Will be sourced by ShellyMeta
 
-= shellyRepoConf.sh = 
+shellyRepoConf.sh
+=================
 Will be sourced by init.sh
 
-= shellyRepoActions.sh = 
+shellyRepoActions.sh
+====================
 Will be called at the end of init.sh.
 
-== Syntax ==
+Syntax
+------
 
-==BEGIN==
+* BEGIN
 ACTIONMAP=(
 	[<link>]=<functionname>
 	<...>
 )
 
 <functions mapped to in ACTIONMAP>
-==END==
