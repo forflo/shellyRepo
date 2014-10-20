@@ -37,7 +37,7 @@ shellyRepo_init(){
 	done
 
 	type clog > /dev/null || {
-		clog 1 "[shellyRepo_init()]" Could not find logging function. Will define one!
+		echo "[shellyRepo_init()]" Could not find logging function. Will define one!
 		function clog(){
 			shift
 			echo "$@"
