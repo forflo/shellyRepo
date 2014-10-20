@@ -13,6 +13,7 @@
 ##
 # Workaround for bug which is fixed in 4.3
 # see. http://lists.gnu.org/archive/html/bug-bash/2014-10/msg00192.html
+# Ubuntu 12.04 (which indeed is supported) still uses 4.2.25...
 ##
 declare -A SHELLYR_hgList
 declare -A SHELLYR_gitList
