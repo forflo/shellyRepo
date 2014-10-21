@@ -9,7 +9,10 @@ shelly_maction(){
 }
 
 shelly_admintools(){
-	:
+	shellyRepo_pathAdd "~/repos/git/admintools/admin_tools"
+	shellyRepo_pathAdd "~/repos/git/admintools/admin_scripts"
+	
+	return 0
 }
 
 shelly_wetL(){
@@ -57,12 +60,11 @@ shelly_erzeuger(){
 }
 
 shelly_work(){
-	echo FUCK YOU!
 	return 0
 }
 
-shellyRepo_pathAddition(){
-	echo "PATH+=\"$1\"" >> $SHELLY_pathFile 
+shellyRepo_pathAdd(){
+	echo "PATH+=\":$1\"" >> $SHELLYR_pathFile 
 
 	return 0
 }
@@ -74,7 +76,7 @@ shellyRepo_action(){
 	for i in ${!SHELLYR_gitList[@]}; do
 		clog 2 "[shellyRepo_action()]" Execute hook "for repo $i"
 		${SHELLYR_gitList[$i]} || {
-			clog 1 "[shellyRepo_action()]" Could not execute function "for repo $i"
+			clog 1 "[shellyRepo_action()]" Hook "for repo $i failed"
 			return 1
 		}
 	done
