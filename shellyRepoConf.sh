@@ -2,7 +2,7 @@
 #
 # Path to the paths addition file
 ##
-SHELLYR_pathFile=".paths.conf"
+SHELLYR_pathFile="~/.paths.conf"
 
 ##
 # In the following associative arrays you can map
