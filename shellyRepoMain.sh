@@ -53,10 +53,8 @@ shellyRepo_init(){
 # and SHELLY_svnList.
 ##
 shellyRepo_dlRepos(){
-	local oldpwd=$PWD
-
 	clog 2 "[shellyRepo_dlRepos()]" Downloading git repos.
-	cd ~/repos/git
+	pushd ~/repos/git
 	## ${!<name>[@]} is just the crude way of saying "give me all keys"
 	for i in ${!SHELLYR_gitList[@]}; do
 		clog 2 "[shellyRepo_dlRepos()]" Cloning repo $i.
@@ -65,9 +63,10 @@ shellyRepo_dlRepos(){
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
 		}
 	done
+	popd
 	
 	clog 2 "[shellyRepo_dlRepos()]" Downloading hg repos.
-	cd ~/repos/mercurial
+	pushd ~/repos/mercurial
 	for i in ${!SHELLYR_hgList[@]}; do
 		clog 2 "[shellyRepo_dlRepos()]" Cloning repo $i.
 		hg clone ${i} || { 
@@ -75,9 +74,10 @@ shellyRepo_dlRepos(){
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
 		}
 	done
+	popd
 	
 	clog 2 "[shellyRepo_dlRepos()]" Downloading srv repos.
-	cd ~/repos/svn
+	pushd ~/repos/svn
 	for i in ${!SHELLYR_svnList[@]}; do
 		clog 2 "[shellyRepo_dlRepos()]" Checkout of repo $i.
 		svn checkout ${i} || { 
@@ -85,8 +85,8 @@ shellyRepo_dlRepos(){
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
 		}
 	done
+	popd
 
-	cd $OLDPWD_C
 	return 0
 }
 
