@@ -30,8 +30,8 @@ SHELLYR_gitList=(
 )
 
 SHELLYR_hgList=(
-	["ssh://hg@bitbucket.org/tartaros/fapr0"]="shelly_fapr0"
-	["ssh://hg@bitbucket.org/tartaros/tartaros-misc"]="shelly_tarmisc"
+	["https://forflo@bitbucket.org/tartaros/fapr0"]="shelly_fapr0"
+	["https://forflo@bitbucket.org/tartaros/tartaros-misc"]="shelly_tarmisc"
 )
 
 SHELLYR_svnList=(
