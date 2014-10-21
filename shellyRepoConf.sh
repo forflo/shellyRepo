@@ -1,9 +1,7 @@
+#!/bin/bash
 #
-# The full repolist used by
-# init.sh
+# Path to the paths addition file
 ##
-
-
 SHELLYR_pathFile=".paths.conf"
 
 ##
@@ -29,10 +27,10 @@ SHELLYR_gitList=(
 	["https://github.com/forflo/erzeuger_verbraucher.git"]="shelly_erzeuger"
 )
 
-SHELLYR_hgList=(
-	["https://forflo@bitbucket.org/tartaros/fapr0"]="shelly_fapr0"
-	["https://forflo@bitbucket.org/tartaros/tartaros-misc"]="shelly_tarmisc"
-)
+#SHELLYR_hgList=(
+#	["ssh://hg@bitbucket.org/tartaros/fapr0"]="shelly_fapr0"
+#	["ssh://hg@bitbucket.org/tartaros/tartaros-misc"]="shelly_tarmisc"
+#)
 
 SHELLYR_svnList=(
 
