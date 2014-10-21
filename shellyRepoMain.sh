@@ -28,14 +28,7 @@ declare -A SHELLYR_svnList
 ##
 shellyRepo_init(){
 	local files=(shellyRepoConf.sh shellyRepoActions.sh)
-
-	for i in ${files[*]}; do
-		. ${i} || {
-			clog 1 "[shellyRepo_init()]" Sourcing of ${i} failed
-			return 1
-		}
-	done
-
+	
 	type clog > /dev/null || {
 		echo "[shellyRepo_init()]" Could not find logging function. Will define one!
 		function clog(){
@@ -43,6 +36,17 @@ shellyRepo_init(){
 			echo "$@"
 			return 0
 		}
+	}
+	
+	for i in ${files[*]}; do
+		. ${i} || {
+			clog 1 "[shellyRepo_init()]" Sourcing of ${i} failed
+			return 1
+		}
+	done
+	
+	rm ~/$SHELLYR_pathFile 2> /dev/null && {
+		clog 2 "[shellyRepo_action()]" Deleted previous $SHELLYR_pathFile!
 	}
 
 	return 0
