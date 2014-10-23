@@ -27,7 +27,8 @@ SHELLYR_gitList=(
 	["https://github.com/forflo/erzeuger_verbraucher.git"]="shelly_erzeuger"
 	["https://github.com/forflo/archfai"]="shelly_dummy"
 	["https://github.com/forflo/arduino_elsock"]="shelly_dummy"
-	
+	["https://github.com/forflo/dmux"]="shelly_dummy"
+	["https://github.com/forflo/plapper"]="shelly_dummy"
 )
 
 #SHELLYR_hgList=(
