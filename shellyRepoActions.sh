@@ -3,6 +3,10 @@
 # Please visit the README for further information
 ##
 
+shelly_dummy(){
+	:
+	return 0
+}
 
 shelly_maction(){
 	:
