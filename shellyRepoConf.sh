@@ -25,6 +25,7 @@ SHELLYR_gitList=(
 	["https://github.com/forflo/libber.git"]="shelly_libber"
 	["https://github.com/forflo/millionaer_server.git"]="shelly_millionaer"
 	["https://github.com/forflo/erzeuger_verbraucher.git"]="shelly_erzeuger"
+	["https://github.com/forflo/archfai"]="shelly_archfai"
 )
 
 #SHELLYR_hgList=(
