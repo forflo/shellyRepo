@@ -30,6 +30,7 @@ SHELLYR_gitList=(
 	["https://github.com/forflo/dmux"]="shelly_dummy"
 	["https://github.com/forflo/plapper"]="shelly_dummy"
 	["https://github.com/forflo/dcmnt_IntroThreading.git"]="shelly_dummy"
+	["https://github.com/forflo/sedfuck"]="shelly_dummy"
 )
 
 #SHELLYR_hgList=(
