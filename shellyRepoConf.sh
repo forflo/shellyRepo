@@ -32,6 +32,7 @@ SHELLYR_gitList=(
 	["https://github.com/forflo/dcmnt_IntroThreading.git"]="shelly_dummy"
 	["https://github.com/forflo/sedfuck"]="shelly_dummy"
 	["https://github.com/forflo/dcmnt_wiki.git"]="shelly_dummy"
+	["https://forflo@bitbucket.org/kbrei/dcf-77.git"]="shelly_dummy"
 )
 
 #SHELLYR_hgList=(
