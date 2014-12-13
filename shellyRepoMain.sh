@@ -62,6 +62,11 @@ shellyRepo_dlRepos(){
 	## ${!<name>[@]} is just the crude way of saying "give me all keys"
 	for i in ${!SHELLYR_gitList[@]}; do
 		clog 2 "[shellyRepo_dlRepos()]" Cloning repo $i.
+		[ -d ~/repos/git/${i##*/} ] && {
+			clog 2 "[shellyRepo_dlRepos()]" Repo already existend! Skipping!
+			continue
+		}
+
 		git clone ${i} || { 
 			clog 1 "[shellyRepo_dlRepos()]" "Error while cloning repo $i!"
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
@@ -73,6 +78,11 @@ shellyRepo_dlRepos(){
 	pushd ~/repos/mercurial
 	for i in ${!SHELLYR_hgList[@]}; do
 		clog 2 "[shellyRepo_dlRepos()]" Cloning repo $i.
+		[ -d ~/repos/git/${i##*/} ] && {
+			clog 2 "[shellyRepo_dlRepos()]" Repo already existend! Skipping!
+			continue
+		}
+
 		hg clone ${i} || { 
 			clog 1 "[shellyRepo_dlRepos()]" "Error while cloning repo $i!"
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
@@ -84,6 +94,11 @@ shellyRepo_dlRepos(){
 	pushd ~/repos/svn
 	for i in ${!SHELLYR_svnList[@]}; do
 		clog 2 "[shellyRepo_dlRepos()]" Checkout of repo $i.
+		[ -d ~/repos/git/${i##*/} ] && {
+			clog 2 "[shellyRepo_dlRepos()]" Repo already existend! Skipping!
+			continue
+		}
+
 		svn checkout ${i} || { 
 			clog 1 "[shellyRepo_dlRepos()]" "Error while checkout of $i!"
 			clog 1 "[shellyRepo_dlRepos()]" Maybe already existent?
