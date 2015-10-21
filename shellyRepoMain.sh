@@ -61,7 +61,7 @@ shellyRepo_dlRepos(){
 	pushd ~/repos/git
 	## ${!<name>[@]} is just the crude way of saying "give me all keys"
 	for i in ${!SHELLYR_gitList[@]}; do
-		clog 2 "[shellyRepo_dlRepos()]" Cloning repo $i.
+		clog 2 "[shellyRepo_dlRepos()]" Cloning repo $i
 		[ -d ~/repos/git/${i##*/} ] && {
 			clog 2 "[shellyRepo_dlRepos()]" Repo already existend! Skipping!
 			continue

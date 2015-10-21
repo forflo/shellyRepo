@@ -32,8 +32,13 @@ SHELLYR_gitList=(
 	["https://github.com/offa/keygen"]="shelly_dummy"
 	["https://github.com/forflo/dcmnt_IntroThreading.git"]="shelly_dummy"
 	["https://github.com/forflo/sedfuck"]="shelly_dummy"
-	["https://github.com/forflo/dcmnt_wiki.git"]="shelly_dummy"
-	["https://forflo@bitbucket.org/kbrei/dcf-77.git"]="shelly_dummy"
+	["https://github.com/forflo/dcmnt_wiki"]="shelly_dummy"
+	["https://forflo@bitbucket.org/kbrei/dcf-77"]="shelly_dummy"
+	["https://github.com/forflo/forflo.github.io"]="shelly_dummy"
+	["https://github.com/forflo/dcmnt_e2fsprogs.git"]="shelly_dummy"
+	["https://github.com/forflo/dcmnt_mbr.git"]="shelly_dummy"
+	["https://github.com/forflo/h5tk.git"]="shelly_dummy"
+    ["https://github.com/forflo/DotToScilab.git"]="shelly_dummy"
 )
 
 #SHELLYR_hgList=(
